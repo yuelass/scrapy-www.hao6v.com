@@ -6,7 +6,6 @@ class Haov6Spider(scrapy.Spider):
     name = 'haov6'
     allowed_domains = ['hao6v.com']
     start_urls = ['http://www.hao6v.com/dy/index.html']
-#//*[@id="main"]/div[2]/div[1]/ul/li[2]/a  //*[@id="main"]/div[2]/div[1] //*[@id="main"]/div[2]/div[1]/ul/li[1] //*[@id="main"]/div[2]/div[1]/ul/li[1]/span
     def parse(self,response):
         yield scrapy.Request(response.url, callback=self.parse_first)
         for page in range(2,265):
